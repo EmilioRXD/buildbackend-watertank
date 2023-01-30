@@ -6,6 +6,7 @@ import cors from "cors";
 // routes
 import levelRoutes from "./routes/level.routes.js";
 import indexRoutes from "./routes/index.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 // Initialization
 const app = express();
@@ -14,16 +15,11 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
-// app.use(
-//   fileUpload({
-//     useTempFiles: true,
-//     tempFileDir: "./uploads",
-//   })
-// );
 
 // Routes
 app.use(indexRoutes);
 app.use("/level", levelRoutes);
+app.use(authRoutes);
 
 // Error Handling
 app.use((req, res) => {

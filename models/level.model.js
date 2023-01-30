@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-const levelSchema = new mongoose.Schema({
+import { Schema, model } from "mongoose";
+const levelSchema = new Schema({
   code: {
     type: String,
     required: true,
@@ -14,4 +14,4 @@ const levelSchema = new mongoose.Schema({
 }, {
   timestamps: true
 });
-export default mongoose.model("WaterTankLevel", levelSchema);
+export default model("WaterTankLevel", levelSchema);

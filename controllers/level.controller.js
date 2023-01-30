@@ -50,7 +50,7 @@ export const updateLevel = async (req, res) => {
     const levelUpdate = await WaterTankLevel.findOneAndUpdate(query, req.body, {
       new: true
     });
-    return res.json(levelUpdate);
+    return res.status(200).json(levelUpdate);
   } catch (error) {
     return res.status(500).json({
       mesagge: error.mesagge
